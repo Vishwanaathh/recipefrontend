@@ -47,7 +47,7 @@
             const ingredients = document.getElementById('ingredients').value;
             const instructions = document.getElementById('instructions').value;
 
-            try {
+        
                 const response = await fetch('https://recipeapi-kappa.vercel.app/create', {
                     method: 'POST',
                     headers: {
