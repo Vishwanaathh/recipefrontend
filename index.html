@@ -57,17 +57,10 @@
                 });
 
                 const result = await response.json();
+                alert("SENT");
+                
+                
 
-                if (response.ok) {
-                    alert("Recipe created successfully!");
-                } else {
-                    alert(`Failed to create recipe: ${result.message || 'Unknown error'}`);
-                }
-
-                document.getElementById('createResult').textContent = JSON.stringify(result, null, 2);
-            } catch (error) {
-                alert("Error creating recipe: " + error.message);
-            }
         });
     </script>
 
