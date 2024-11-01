@@ -28,7 +28,9 @@
     <input type="text" id="ingredients" placeholder="Ingredients" required />
     <input type="text" id="instructions" placeholder="Instructions" required />
     <button id="createButton">Create Recipe</button>
+
     <pre id="createResult"></pre>
+    <div id="mes"></div>
 
     <script>
         // Fetch a recipe by name
@@ -41,6 +43,7 @@
 
         // Create a new recipe
         document.getElementById('createButton').addEventListener('click', async () => {
+        
             const name = document.getElementById('recipeName').value;
             const ingredients = document.getElementById('ingredients').value;
             const instructions = document.getElementById('instructions').value;
@@ -52,10 +55,13 @@
                 },
                 body: JSON.stringify({ name, ingredients, instructions })
             });
+            
 
-            const result = await response.json();
+            const mes=document.getElementById("mes");
+            mes.innerText=response;
+
+           
             document.getElementById('createResult').textContent = JSON.stringify(result, null, 2);
-            window.alert("Data has been sent");
             
         });
     </script>
